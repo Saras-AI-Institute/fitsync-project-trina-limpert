@@ -18,6 +18,13 @@ heart_rate = np.random.normal(loc=68, scale=10, size=365).clip(48, 110)
 calories_burned = np.random.randint(1800, 4200, size=365)
 active_minutes = np.random.randint(20, 180, size=365)
 
+# Ensure arrays are float before applying NaN
+steps = steps.astype(float)
+sleep_hours = sleep_hours.astype(float)
+heart_rate = heart_rate.astype(float)
+calories_burned = calories_burned.astype(float)
+active_minutes = active_minutes.astype(float)
+
 # Introduce 5% missing values randomly in each column
 def introduce_missing_values(data, percentage=0.05):
     n_values = int(len(data) * percentage)
