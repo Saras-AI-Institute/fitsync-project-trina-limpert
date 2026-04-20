@@ -23,25 +23,20 @@ time_range = st.sidebar.selectbox(
 # Filter the dataframe based on the selected time range
 df = processed_data.copy()
 if time_range == "Last 7 Days":
-    # Keep only the most recent 7 days
     recent_date = df['Date'].max()
     df = df[df['Date'] >= (recent_date - pd.Timedelta(days=7))]
 elif time_range == "Last 30 Days":
-    # Keep only the most recent 30 days
     recent_date = df['Date'].max()
     df = df[df['Date'] >= (recent_date - pd.Timedelta(days=30))]
 
 # Summary statistics
-df_summary = df[['Recovery_Score', 'Sleep_Hours', 'Steps', 'Calories_Burned']].agg(['mean', 'max'])
-st.subheader("Summary Statistics")
-st.dataframe(df_summary)
+# Removing the subtitle
+st.dataframe(df[['Recovery_Score', 'Sleep_Hours', 'Steps', 'Calories_Burned']].agg(['mean', 'max']))
 
 # Average Recovery Score month-wise
-st.subheader("Average Recovery Score by Month")
+# Removed the subtitle
 df['month'] = df['Date'].dt.to_period('M')
 avg_recovery_month = df.groupby('month')['Recovery_Score'].mean().reset_index()
-
-# Convert 'month' to string for JSON serialization compatibility
 avg_recovery_month['month'] = avg_recovery_month['month'].astype(str)
 
 # Create a line chart for average recovery score by month
@@ -53,9 +48,7 @@ recovery_line_fig = px.line(
     labels={'month': 'Month', 'Recovery_Score': 'Average Recovery Score'})
 st.plotly_chart(recovery_line_fig, use_container_width=True)
 
-# Histograms for various metrics
-st.subheader("Distribution of Key Metrics")
-
+# Remove subtitle for histograms
 df_metrics = ['Steps', 'Calories_Burned', 'Recovery_Score', 'Sleep_Hours']
 
 for metric in df_metrics:

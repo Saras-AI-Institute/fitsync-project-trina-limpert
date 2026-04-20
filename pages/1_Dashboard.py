@@ -12,9 +12,6 @@ st.title("FitSync - Personal Health Analytics")
 # Process the data to be used in the dashboard
 processed_data = process_data()
 
-# Display the processed data in a clean and modern way
-#st.dataframe(processed_data)  # You can extend this part to include more insights
-
 # Sidebar filter
 st.sidebar.header("Filters")
 time_range = st.sidebar.selectbox(
@@ -26,11 +23,9 @@ time_range = st.sidebar.selectbox(
 # Filter the dataframe based on the selected time range
 df = process_data()
 if time_range == "Last 7 Days":
-    # Keep only the most recent 7 days
     recent_date = df['Date'].max()
     df = df[df['Date'] >= (recent_date - pd.Timedelta(days=7))]
 elif time_range == "Last 30 Days":
-    # Keep only the most recent 30 days
     recent_date = df['Date'].max()
     df = df[df['Date'] >= (recent_date - pd.Timedelta(days=30))]
 
@@ -57,7 +52,7 @@ chart_col1, chart_col2 = st.columns(2)
 
 # Left column - Dual Line Chart
 with chart_col1:
-    st.subheader("Recovery Score & Sleep Trend")
+    # Removed subheader
 
     # Creating line chart for Recovery Score and Sleep Hours
     line_fig = px.line(
@@ -70,7 +65,7 @@ with chart_col1:
 
 # Right column - Scatter Plot
 with chart_col2:
-    st.subheader("Recovery Score vs Daily Steps")
+    # Removed subheader
 
     # Creating scatter plot
     scatter_fig = px.scatter(
@@ -90,7 +85,7 @@ chart_col3, chart_col4 = st.columns(2)
 
 # Left column - Recovery Score vs Heart Rate
 with chart_col3:
-    st.subheader("Recovery Score vs Resting Heart Rate")
+    # Removed subheader
 
     # Scatter plot for Recovery Score vs Resting Heart Rate
     heart_rate_fig = px.scatter(
@@ -103,7 +98,7 @@ with chart_col3:
 
 # Right column - Line Chart for Calories Burned
 with chart_col4:
-    st.subheader("Daily Calories Burned Trend")
+    # Removed subheader
 
     # Line chart for Calories Burned Trend
     calories_fig = px.line(
@@ -113,6 +108,3 @@ with chart_col4:
         title="Daily Calories Burned Trend",
         labels={'Calories_Burned': 'Calories Burned'})
     st.plotly_chart(calories_fig, use_container_width=True)
-
-# Placeholder for future enhancements
-# e.g. charts, interactive elements etc.
