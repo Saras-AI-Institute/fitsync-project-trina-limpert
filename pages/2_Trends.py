@@ -10,7 +10,11 @@ st.set_page_config(layout="wide", page_title="Trends & Insights")
 st.title("Trends & Insights")
 
 # Load and process data
-processed_data = process_data()
+@st.cache_data
+def get_processed_data():
+    return process_data()
+
+processed_data = get_processed_data()
 
 # Sidebar filter
 st.sidebar.header("Filters")

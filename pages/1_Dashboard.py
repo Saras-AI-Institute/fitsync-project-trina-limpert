@@ -10,7 +10,11 @@ st.set_page_config(layout="wide", page_title="FitSync")
 st.title("FitSync - Personal Health Analytics")
 
 # Process the data to be used in the dashboard
-processed_data = process_data()
+@st.cache_data
+def get_processed_data():
+    return process_data()
+
+processed_data = get_processed_data()
 
 # Sidebar filter
 st.sidebar.header("Filters")
@@ -21,7 +25,7 @@ time_range = st.sidebar.selectbox(
 )
 
 # Filter the dataframe based on the selected time range
-df = process_data()
+df = processed_data
 if time_range == "Last 7 Days":
     recent_date = df['Date'].max()
     df = df[df['Date'] >= (recent_date - pd.Timedelta(days=7))]
@@ -108,3 +112,4 @@ with chart_col4:
         title="Daily Calories Burned Trend",
         labels={'Calories_Burned': 'Calories Burned'})
     st.plotly_chart(calories_fig, use_container_width=True)
+

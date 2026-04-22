@@ -1,36 +1,34 @@
-# 🚀 Code with AI: FitSync Analytics
 
-Welcome to the **FitSync** project! This repository is your home for the next 5 weeks as we build a professional-grade health analytics dashboard using AI-driven workflows.
 
-## 📋 Project Basics
-* **Project Title:** FitSync (Personal Health Analytics)
-* **Course:** Code with AI 
-* **Institution:** Saras AI Institute 
+# 🌟 FitSync - Health Analytics Platform
+*Empowering Personal Health with Data-Driven Insights*
 
-## 🛠️ Repository Setup & Naming
-**CRITICAL:** When you clone the repository, ensure your repository follows this naming convention:
-`fitsync-project-firstname-lastname`
+## Project Overview
+FitSync is an innovative personal health analytics platform that offers a comprehensive 3-page dashboard built using Python and Streamlit. This project focuses on delivering key performance indicators (KPIs), insightful charts on the Dashboard page, and detailed histograms and insights on the Trends page. Designed with flexibility and user engagement in mind, FitSync leverages cutting-edge technology to provide individuals with actionable health data, enhancing their ability to make informed wellness decisions.
 
-## 💻 How to Start (Codespaces)
-We use a cloud-based "AI Cockpit" to ensure a consistent environment for everyone.
-1. Click the green **"<> Code"** button at the top right of this page.
-2. Select the **Codespaces** tab.
-3. Click **"Create codespace on main"**.
-4. Once it loads, ensure the **Continue** extension is active.
+## Tech Stack
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.0%2B-red)
+![Pandas](https://img.shields.io/badge/Pandas-Data__Analysis-orange)
+![Plotly](https://img.shields.io/badge/Plotly-Graphing-yellow)
+![Continue Agent](https://img.shields.io/badge/AI-Continue__Agent-lightgrey)
+![GitHub Codespaces](https://img.shields.io/badge/GitHub-Codespaces-green)
 
-## 📅 Weekly Workflow (Update After Each Session)
-You are expected to commit your progress after every live session.
-* **Week 1:** Scaffold folders and generate `health_data.csv`.
-* **Week 2:** Clean data and implement the `Recovery Score` logic.
-* **Week 3:** Build the Streamlit UI and KPI metrics.
-* **Week 4:** Add Plotly visualizations and @st.cache optimization.
-* **Week 5:** Finalize documentation and deploy live.
+## How to Run
+To run the FitSync dashboard locally, follow these steps:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/fitsync-project
+   ```
+2. **Open a new Codespace:**
+   - Navigate to your GitHub repository.
+   - Click on the **"Codespaces"** tab.
+   - Click on **"Create codespace on main"**.
 
-## 📤 Submission Instructions
-1. Ensure all your changes are pushed to GitHub: `git push origin main`.
-2. Copy the URL of your repository (e.g., `https://github.com/saras-ai/fitsync-project-firstname-lastname`).
-3. Paste this URL into the **Module 1 Assignment** slot in the **LMS (Learning Management System)**.
-4. **Note:** Your code will also be automatically graded via GitHub Actions.
+3. **Run the application:**
+   ```bash
+   streamlit run main.py
+   ```
 
----
-*Built with GitHub Copilot & Cursor @ Saras AI Institute*.
+## Built with AI
+FitSync capitalizes on AI-driven tools to streamline development. Leveraging **Continue Agent** within GitHub Codespaces, we accelerated code syntax generation while retaining complete control over architectural and data logic decisions. Additionally, **Claude Code** was utilized to enhance the user experience on the home page, ensuring a seamless and intuitive interface. Our approach underscores the powerful combination of AI assistance and human ingenuity in crafting sophisticated software solutions.
